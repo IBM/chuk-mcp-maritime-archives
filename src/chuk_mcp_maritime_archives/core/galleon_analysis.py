@@ -34,7 +34,7 @@ def _load_galleon(data_dir: Path | None = None) -> None:
         logger.warning("Galleon data file not found: %s", path)
         return
 
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         _GALLEON_VOYAGES = json.load(f)
     logger.info("Loaded %d galleon voyages from %s", len(_GALLEON_VOYAGES), path)
 
