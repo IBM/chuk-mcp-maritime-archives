@@ -42,7 +42,7 @@ class BaseArchiveClient(ABC):
             self._loaded[filename] = []
             return []
 
-        with open(path) as f:
+        with open(path, encoding="utf-8") as f:
             data = json.load(f)
 
         if not isinstance(data, list):

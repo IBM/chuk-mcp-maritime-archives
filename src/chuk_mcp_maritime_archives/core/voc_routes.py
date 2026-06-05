@@ -59,7 +59,7 @@ def _load_routes(data_dir: Path | None = None) -> None:
         logger.warning("Routes not found: %s (run scripts/generate_reference.py)", path)
         return
 
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         entries = json.load(f)
 
     for entry in entries:
