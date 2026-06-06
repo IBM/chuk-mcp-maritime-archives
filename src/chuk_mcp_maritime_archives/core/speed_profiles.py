@@ -47,7 +47,7 @@ def _load_speed_profiles(data_dir: Path | None = None) -> None:
         )
         return
 
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         data = json.load(f)
 
     _PROFILES = data.get("profiles", [])
