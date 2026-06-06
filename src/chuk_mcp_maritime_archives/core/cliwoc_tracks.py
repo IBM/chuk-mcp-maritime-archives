@@ -53,7 +53,7 @@ def _load_tracks(data_dir: Path | None = None) -> None:
         logger.warning("CLIWOC tracks not found: %s (run scripts/download_cliwoc.py)", path)
         return
 
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         data = json.load(f)
 
     _TRACKS = data.get("tracks", [])
