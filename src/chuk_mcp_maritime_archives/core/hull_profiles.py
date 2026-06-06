@@ -30,7 +30,7 @@ def _load_hull_profiles(data_dir: Path | None = None) -> dict[str, dict]:
         logger.warning("Hull profiles not found: %s (run scripts/generate_reference.py)", path)
         return HULL_PROFILES
 
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         profiles = json.load(f)
 
     for profile in profiles:
