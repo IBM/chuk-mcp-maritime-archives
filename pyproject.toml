@@ -7,7 +7,7 @@ license = { text = "Apache-2.0" }
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "chuk-mcp-server>=0.15.1",
+    "chuk-mcp-server>=0.25.5",
     "chuk-artifacts",
     "python-dotenv>=1.1.1",
     "pydantic>=2.0.0",
@@ -102,3 +102,12 @@ target-version = "py311"
 [tool.bandit]
 exclude_dirs = ["tests"]
 skips = ["B101"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = false
+ignore_missing_imports = true
+follow_imports = "silent"
+disallow_untyped_defs = false
+warn_return_any = false
+show_error_codes = true
